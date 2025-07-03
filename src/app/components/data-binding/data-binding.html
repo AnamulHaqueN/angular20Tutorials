@@ -1,0 +1,69 @@
+<table style="width: 100%;">
+   
+   <!-- One way data-binding - interpolation -->
+   <tr>
+        <td>
+        {{courseName}}
+        </td>
+
+        <td>
+        {{productPrice}}
+        </td>
+
+        <td>
+            <span>{{courseName}}</span>
+        </td>
+
+        <td>
+            <!-- {{fullName}} -->
+        </td>
+
+    </tr>
+
+    <!-- one way data binding property-binding -->
+    <tr>
+
+      <td>
+        <input type="text" value ="{{courseName}}">
+      </td>
+      
+      <td>
+        <input [type] = "inputType" [max] = "maxlength" [minLength]="minChar">
+      </td>
+      <td>
+        <p [class] = "myClassName">This is Sample para</p>
+      </td>
+
+    </tr>
+    
+    <!-- one way data binding event-binding -->
+    <tr>
+
+       <td>
+          <button (click) = "showWelcomeMessage()">show message</button>
+       </td>
+
+       <td>
+          <button (click) = "changeCourseName()">change course</button>
+       </td>
+
+       <td>
+          <select (change) = "onChange()" >
+            <option value="">Pune</option>
+            <option value="">Nagpur</option>
+            <option value="">Mumbai</option>
+          </select>
+       </td>
+
+    </tr>
+
+    <!-- Two way data binding NgModel -->
+    <tr>
+      
+        <td>
+            <input type="text" [(ngModel)] = "courseName" >
+        </td>
+
+    </tr>
+
+</table>
