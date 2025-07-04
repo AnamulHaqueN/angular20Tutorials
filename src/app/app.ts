@@ -5,6 +5,7 @@ import { User } from './components/user/user';
 import { DataBinding } from './components/data-binding/data-binding';
 import { SignalEx } from './components/signal-ex/signal-ex';
 import { ControlFlow } from './components/control-flow/control-flow';
+import { GetApi } from './components/get-api/get-api';
 
 @Component({
   selector: 'app-root',
