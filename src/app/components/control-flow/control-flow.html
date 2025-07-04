@@ -1,0 +1,87 @@
+<table>
+
+   <tr>
+
+    <td>
+        @if(simplePara === true) {
+            <p>This is Sample Paraph</p>
+        } @else {
+            <p>Simple Para is false</p>
+        }
+    </td>
+    
+    <td>
+       <button (click) = "showPara()">Show P</button>
+    </td>
+
+    <td>
+       <button (click) = "hidePara()">Hide P</button>
+    </td>
+
+   </tr>
+
+
+   <tr>
+
+    <td>
+        <input type="text" [(ngModel)] = "startMonth">
+    </td>
+
+    <td>
+        @if(startMonth == 'jan') {
+            <span>January</span>
+        } @else if(startMonth == 'feb') {
+            <span>February</span>
+        } @else if(startMonth == 'mar') {
+            <span>March</span>
+        } @else if(startMonth == 'apr') {
+            <span>April</span>
+        } @else {
+            <span>Not an Valid Month</span>
+        }
+    </td>
+
+   </tr>
+
+
+   <tr>
+    <td>
+        <ul>
+            @for(list of cityList; track $index) {
+                <li>{{list}}</li>
+            }
+        </ul>
+    </td>
+</tr>
+
+</table> <br>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @for(item of studentList; track $index){
+            <tr>
+                <td>{{$index + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.city}}</td>
+                <td>
+                    @if(item.isActive === true) {
+                        <td>Active</td>
+                    } @else {
+                        <td>Not Active</td>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
